@@ -27,15 +27,44 @@
 }
 
 - (IBAction)CalculateResistance:(id)sender {
+    double current = _currentBox.doubleValue;
+    double voltage = _voltageBox.doubleValue;
     
+    
+    if(1 == _ohmsRadio.integerValue){
+        
+    }else if(1 == _kiloOhmsRadio.integerValue){
+        
+    }else if(1 == _megaOhmsRadio.integerValue){
+        
+    }
 }
 
 - (IBAction)CalculateCurrent:(id)sender {
+    double voltage = _voltageBox.doubleValue;
+    double resistance = _resistanceBox.doubleValue;
     
+    if(1 == _ohmsRadio.integerValue){
+        
+    }else if(1 == _kiloOhmsRadio.integerValue){
+        
+    }else if(1 == _megaOhmsRadio.integerValue){
+        
+    }
+
 }
 
 - (IBAction)CalculateVoltage:(id)sender {
+    double current = _currentBox.doubleValue;
+    double resistance = _resistanceBox.doubleValue;    
     
+    if(1 == _ohmsRadio.integerValue){
+        
+    }else if(1 == _kiloOhmsRadio.integerValue){
+        
+    }else if(1 == _megaOhmsRadio.integerValue){
+        
+    }
 }
 
 @end
