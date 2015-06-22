@@ -22,5 +22,20 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+- (IBAction)ClearEntries:(id)sender {
+    
+}
+
+- (IBAction)CalculateResistance:(id)sender {
+    
+}
+
+- (IBAction)CalculateCurrent:(id)sender {
+    
+}
+
+- (IBAction)CalculateVoltage:(id)sender {
+    
+}
 
 @end

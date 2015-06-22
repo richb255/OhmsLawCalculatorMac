@@ -10,6 +10,17 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (weak) IBOutlet NSButtonCell *ohmsRadio;
+
+@property (weak) IBOutlet NSButtonCell *kiloOhmsRadio;
+
+@property (weak) IBOutlet NSButtonCell *megaOhmsRadio;
+
+@property (weak) IBOutlet NSTextField *voltageBox;
+
+@property (weak) IBOutlet NSTextField *currentBox;
+
+@property (weak) IBOutlet NSTextField *resistanceBox;
 
 @end
 
