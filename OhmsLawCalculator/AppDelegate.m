@@ -23,13 +23,17 @@
     // Insert code here to tear down your application
 }
 - (IBAction)ClearEntries:(id)sender {
-    
+    _voltageBox.stringValue = @"";
+    _currentBox.stringValue =@"";
+    _resistanceBox.stringValue = @"";
 }
 
 - (IBAction)CalculateResistance:(id)sender {
     double current = _currentBox.doubleValue;
     double voltage = _voltageBox.doubleValue;
     
+    
+    double resistance = voltage / current;
     
     if(1 == _ohmsRadio.integerValue){
         
@@ -38,6 +42,8 @@
     }else if(1 == _megaOhmsRadio.integerValue){
         
     }
+    
+    _resistanceBox.doubleValue = resistance;
 }
 
 - (IBAction)CalculateCurrent:(id)sender {
@@ -52,11 +58,14 @@
         
     }
 
+    double current = voltage / resistance;
+    
+    _currentBox.doubleValue = current;
 }
 
 - (IBAction)CalculateVoltage:(id)sender {
     double current = _currentBox.doubleValue;
-    double resistance = _resistanceBox.doubleValue;    
+    double resistance = _resistanceBox.doubleValue;
     
     if(1 == _ohmsRadio.integerValue){
         
@@ -65,6 +74,10 @@
     }else if(1 == _megaOhmsRadio.integerValue){
         
     }
+    
+    double voltage = current * resistance;
+    
+    _voltageBox.doubleValue = voltage;
 }
 
 @end
