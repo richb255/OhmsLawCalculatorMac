@@ -38,9 +38,14 @@
     if(1 == _ohmsRadio.integerValue){
         
     }else if(1 == _kiloOhmsRadio.integerValue){
+        if((resistance / 1000.0) > 1.0){
+            resistance /= 1000.0;
+        }
         
     }else if(1 == _megaOhmsRadio.integerValue){
-        
+        if((resistance / 1000000.0) > 1.0){
+            resistance /= 1000000.0;
+        }
     }
     
     _resistanceBox.doubleValue = resistance;
@@ -53,9 +58,10 @@
     if(1 == _ohmsRadio.integerValue){
         
     }else if(1 == _kiloOhmsRadio.integerValue){
+            resistance *= 1000.0;
         
     }else if(1 == _megaOhmsRadio.integerValue){
-        
+            resistance *= 1000000.0;
     }
 
     double current = voltage / resistance;
@@ -70,9 +76,10 @@
     if(1 == _ohmsRadio.integerValue){
         
     }else if(1 == _kiloOhmsRadio.integerValue){
-        
+            resistance *= 1000.0;
     }else if(1 == _megaOhmsRadio.integerValue){
-        
+            resistance *= 1000000.0;
+
     }
     
     double voltage = current * resistance;
