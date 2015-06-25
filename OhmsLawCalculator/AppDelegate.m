@@ -10,8 +10,11 @@
 
 @interface AppDelegate ()
 
+
+
 @property (weak) IBOutlet NSWindow *window;
 @end
+
 
 @implementation AppDelegate
 
@@ -22,9 +25,29 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
+- (void)CalcCurrent{
+    double voltage = _voltageBox.doubleValue;
+    double resistance = _resistanceBox.doubleValue;
+    
+    if(1 == _ohmsRadio.integerValue){
+        
+    }else if(1 == _kiloOhmsRadio.integerValue){
+        resistance *= 1000.0;
+        
+    }else if(1 == _megaOhmsRadio.integerValue){
+        resistance *= 1000000.0;
+    }
+    
+    double current = voltage / resistance;
+    
+    _currentBox.doubleValue = current;
+}
+
+
 - (IBAction)ClearEntries:(id)sender {
     _voltageBox.stringValue = @"";
-    _currentBox.stringValue =@"";
+    _currentBox.stringValue = @"";
     _resistanceBox.stringValue = @"";
 }
 
@@ -86,5 +109,28 @@
     
     _voltageBox.doubleValue = voltage;
 }
+- (IBAction)mnuCalcVoltage:(id)sender {
+    double current = _currentBox.doubleValue;
+    double resistance = _resistanceBox.doubleValue;
+    
+    if(1 == _ohmsRadio.integerValue){
+        
+    }else if(1 == _kiloOhmsRadio.integerValue){
+        resistance *= 1000.0;
+    }else if(1 == _megaOhmsRadio.integerValue){
+        resistance *= 1000000.0;
+        
+    }
+    
+    double voltage = current * resistance;
+    
+    _voltageBox.doubleValue = voltage;
+}
+
+- (IBAction)mnuCalcCurrent:(id)sender {
+    [self CalcCurrent ];
+}
+
+
 
 @end
